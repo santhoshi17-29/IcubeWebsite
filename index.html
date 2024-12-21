@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>ICUBE 3.0</title>
+
+    <link rel="shortcut icon" href="assets/img/logo/favicon-32x32.png">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/icofont.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/slick.css"> -->
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/timeline.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body >
+    <div class="main-container">
+    <div id="tsparticles"> </div>
+    <div id="tsparticles"> </div>
+    <svg></svg>
+  <script>
+    const svg = document.querySelector('svg');
+    let points = [];
+
+    const createSVGElement = (type, attributes) => {
+      const element = document.createElementNS('http://www.w3.org/2000/svg', type);
+      for (const attr in attributes) {
+        element.setAttribute(attr, attributes[attr]);
+      }
+      return element;
+    };
+
+    const resizeSVG = () => {
+      svg.setAttribute('width', window.innerWidth);
+      svg.setAttribute('height', window.innerHeight);
+      points = Array.from({ length: 100 }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2
+      }));
+    };
+
+    const draw = () => {
+      while (svg.firstChild) {
+        svg.removeChild(svg.firstChild);
+      }
+
+      points.forEach(p1 => {
+        const circle = createSVGElement('circle', {
+          cx: p1.x,
+          cy: p1.y,
+          r: 2,
+          fill: '#f0f0f0'
+        });
+        svg.appendChild(circle);
+
+        points.forEach(p2 => {
+          const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+          if (dist < 150) {
+            const line = createSVGElement('line', {
+              x1: p1.x,
+              y1: p1.y,
+              x2: p2.x,
+              y2: p2.y,
+              stroke: '#f0f0f0',
+              'stroke-width': 0.5
+            });
+            svg.appendChild(line);
+          }
+        });
+
+        p1.x += p1.vx;
+        p1.y += p1.vy;
+        if (p1.x < 0 || p1.x > window.innerWidth) p1.vx *= -1;
+        if (p1.y < 0 || p1.y > window.innerHeight) p1.vy *= -1;
+      });
+
+      requestAnimationFrame(draw);
+    };
+
+    const addPoint = (event) => {
+      const rect = svg.getBoundingClientRect();
+      points.push({
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2
+      });
+    };
+
+    window.addEventListener('resize', resizeSVG);
+    svg.addEventListener('click', addPoint);
+    resizeSVG();
+    draw();
+  </script>
+
+
+
+        <!-- <div class="preloader">
+            <div class="sparklers">
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+            </div>
+            <div class="loading-screen">
+                <div class="rocket">
+                🚀
+                </div>
+                <div class="loading-text">Loading...</div>
+            </div>
+            
+        
+        </div> -->
+
+    <!-- ----------1. LOADING SECTION---------------- -->
+
+<main>
+   
+    <header>
+        <div id="about-us" id="main-header" class="header-area">
+          <div class="sticky-header">
+            <div class="header-bottom position-relative">
+              <div class="container">
+                <div class="row align-items-center justify-content-start justify-content-lg-between">
+                  <!-- Logo Section -->
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                    <div class="logo">
+                      <a href="https://dexters-in.github.io/i-cube_2.0/">
+                        <img style="height: 100px; width:180px" src="assets/img/logo/ICUBE LOGO 1.png" alt="">
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Navigation Section -->
+
+                  
+                  <div class="col-lg-9 col-md-9 col-sm-9 col-6 d-flex justify-content-end" >
+                    <div class="hamburger-menu" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    <nav class="main-menu">
+                        
+                      <ul >
+                        <li><a href="#about"><p>Abstract <br>Template</p></a></li>
+                        <li><a href="#problem-statement"><p>Problem <br>Statements</p></a></li>
+                        <li><a href="#schedule"><p>Schedule</p></a></li>
+                        <li><a href="#prize"><p>Prize</p></a></li>
+                        <li><a href="#faq"><p>FAQs</p></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header><br><br><br>
+
+      <!-- ------------------------ 2. HEADER SECTION ---------------------- -->
+
+
+<body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <div class="slider-wrapper" >
+        <div class="custom-slider">
+            <!-- Slide 1 -->
+            <div class="custom-slide">
+                
+                <h2 style="width: 100%; text-align: center;">Sri Venkateswara College of Engineering</h2>
+                <div class="cont">
+                <div class="slide-content">
+                    <h4>Sri Venkateswara College of Engineering (SVCE), a premier engineering college in Tamilnadu was established in the year 1985. 
+                        The college is one of the pioneers in engineering education, excelling under the governance of Dr. A. C. Muthiah, an industrialist, 
+                        cricket administrator, philanthropist, and educationist who is the Chairman of the Governing Council of the college.</h4>
+                </div>
+                <div class="imagez">
+                <img src="assets/img/logo/logosvceR_edited-removebg-preview.png" alt="SVCE Logo">
+            </div>
+        </div>
+    </div>
+            <!-- Slide 2 -->
+            <div class="custom-slide">
+                
+                <h2 style="width: 100%; text-align: center;">Student's Council</h2>
+                <div class="cont">
+
+                <div class="slide-content">
+                    <h4>The Student Council is the apex student body for 4000+ students studying in SVCE. 
+                        The Student Council is in charge of the smooth conduct of college level events - Freshers Day, Ice breaker session for freshmen,
+                         Teachers Day, Sports Day, College Culturals and Student Research Day. Under the leadership of Ms. Jasi Grace I and the mentoring of Prof. 
+                         Ganesh Vaidyanathan, the Student Council has brought forward several initiatives, each empowering hundreds of students.</h4>                    
+                </div>
+                <div class="imagez">
+
+                <img src="assets/img/logo/svce_om_logo-removebg-preview.png" alt="Student Council Logo">
+            </div></div></div>
+            <!-- Slide 3 -->
+            <div class="custom-slide">
+                
+                    <h2 style="width: 100%; text-align: center;">Science Club</h2>
+                    <div class="cont">
+                    <div class="slide-content">
+
+                        <h4>The SVCE Science Club was started by the institution with a purpose to cultivate interest among the student community to 
+                            acquire scientific knowledge. Our club is an integration of three subjects, namely Physics, Chemistry, and Mathematics.
+                             The door of the club is open to all the students who want to explore their interests in science. Students are provided 
+                             with opportunities to engage with fellow students, professors, and eminent personalities of the field in meaningful and
+                              prudential ways.</h4>                    
+                              
+                </div>
+                <div class="imagez">
+
+                <img src="assets/img/logo/sci-logo.png" alt="Science Club Logo">
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+
+    <!-- -----------------------3.  3 slide Section -------------------------------- -->
+
+    <div class="cont2" >
+       
+    <div class="link-section">
+    <a href="assets/files/iCUBE 3.0 RULEBOOK.pdf" download class="btn1 event-btn">Download Rulebook</a></div>
+    <div class="link-section">
+
+    <a href="./assets/files//Santhoshi_Internship_Certificate.pdf" download="Santhoshi_Internship_Certificate" class="btn1 event-btn" target="_blank">Brochure</a></div>
+    
+</div>
+
+
+
+   <!-- ------------------------------------- 4. Bronchure and Rule Book --------------------------------------------------- -->
+
+<br><br><br>
+    
+    
+
+    <br>
+    <br>
+    
+
+    <div class="counter-area padding-bottom-120">
+        <div class="container">
+            <div class="row padding-top-50 justify-content-center margin-bottom-20 wow fadeInUp">
+                <div class="col-lg-6">
+                    <div class="common-title text-center">
+                    <h2 class="gradient-text shining-text reflection" >Registrations <span>Closes in</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="row counter_wrapper countdown">
+                        <div class="col-6 col-sm-3">
+                            <div class="single-counter">
+                                <p  ><h2 id="days" class="days">00</h2></p>
+                                <h6>days</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="single-counter">
+                                <p ><h2 id="hours" class="hours">00</h2></p>
+                                <h6>hours</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="single-counter">
+                                <p ><h2 id="minutes" class="minutes">00</h2></p>
+                                <h6>minutes</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="single-counter">
+                                <p ><h2 id="seconds" class="seconds">00</h2></p>
+                                <h6>seconds</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ---------------------------------- 5. Registration + Timer ---------------------------------- -->
+
+
+    
+    <div id="tsparticles" class="ev_schedule padding-top-110 padding-bottom-120" >
+        <!-- <div class="ev-shapes">
+            <img src="assets/img/shape/e_vec5.png" alt="" class="vec_1">
+        </div> -->
+        <div class="container">
+            <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
+                <div class="col-lg-6">
+                    <div class="common-title text-center">
+                        <div class="intro-container">
+                            <div class="intro purpletheme">EVENTS UNDER ICUBE 4.0</div>
+                          </div>
+                          <p style="text-align: center; color: rgb(154, 148, 181); font-size: 30px;">A National Level Intercollegiate Event</p>
+                        </div>
+                </div>
+            </div>
+
+
+            <!-- ------------------------------6. Events Under--------------------- -->
+    
+    <div class="event-promo ">
+        <div class="ev_shapes">
+            <img src="assets/img/shape/e_vec1.png" alt="" class="vec_1">
+            <img src="assets/img/shape/e_vec2.png" alt="" class="vec_2">
+            <img src="assets/img/shape/e_vec4.png" alt="" class="vec_4 item-animateOne">
+            <img src="assets/img/shape/e_vec5.png" alt="" class="vec_5 item-animateTwo">
+            <img src="assets/img/shape/e_vec6.png" alt="" class="vec_6 d-none d-sm-block">
+            <img src="assets/img/shape/e_vec8.png" alt="" class="vec_8">
+            <img src="assets/img/shape/vec_2.png" alt="" class="vec_9 item-animateTwo">
+        </div>
+      
+                                    <div class="cont3">
+                                        <!-- Content Box 1 -->
+                                        <div class="cont-box1 left">
+                                          <h4 >InnoWel - Innovate for Wellbeing</h4>
+                                          <h5 >Problem Statement will be provided</h5>
+                                          <p class="margin-top-20">
+                                            Not only do you get to learn while making your own project, but you can also check out other projects once
+                                            the hackathon is over to see what others did differently.
+                                          </p>
+                                          <div class="event-link">
+                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScrWbC93u0YUtMZaV48aTXHfaKmKKm_uGbDhJs5FrJ0sX9SMg/viewform?usp=sharing"
+                                               target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
+                                            <a href="./assets/files/InnoWel Abstract Template.docx" download="InnoWel Abstract Template"
+                                               target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
+                                          </div>
+                                        </div>
+                                    
+                                        <!-- Content Box 2 -->
+                                        <div class="cont-box1 right">
+                                            <h4>Idea-o-lite - Ideate to illuminate</h4>
+                                            <h5>Theme: Fostering Societal Growth</h5>
+                                            <p class="margin-top-20">You’ll get exposure to some of the best minds in the
+                                                country, not just among the participants, but also the judges. You can make
+                                                friends and forge professional relationships with people from all across the
+                                                country.
+                                            </p>
+                                            <div class="event-link">
+                                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPpR9XcKrxHLHZDaEw7aSUsjJOwqN9IaAyw0H3XnCvjoeWSQ/viewform?usp=sharing" target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
+                                                <a href="./assets/files//Idea-O-Lite Abstract Template.docx" download="Idea-O-Lite Abstract Template" target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
+                                            </div>
+                                        </div>
+                                      </div>
+
+
+
+                        <!-- -------------------7. Innowel   IdeoLite--------------------------------- -->
+               
+            <br>
+            <br>
+            <br>
+                <div class="corner-container">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="ep-left">
+                        <div class="common-title">
+                            <h5>Why Join I-CUBE 3.0</h5>
+                            <h2>Why You Should <span>Join Event</span> ?</h2>
+                            <p class="margin-top-20">
+                                The three words ideate, innovate, and investigate
+                                essentially represent the ethos of this event.
+                                Ideate refers to forming new ideas, innovate refers
+                                to the ideas being feasible and creative in nature,
+                                and Investigate refers to scrutinizing the ideas
+                                based on scientific facts, creativity, and novelty
+                                after their submission.
+                            </p>
+                            <p class="margin-top-20">
+                                Participants will be shortlisted for the preliminary
+                                round under each category based on the abstract submitted.
+                                Based on the presentation, participants will be
+                                shortlisted for the final round where they need to
+                                present their complete work in front of the panel of Judges.
+                            </p>
+                            <!--<a href="https://forms.gle/Gn56icGPW7uziiaM6" target="_blank" class="btn1 margin-top-10 register-btn">REGISTER</a>-->
+                        </div>
+                    </div>
+                    </div>
+                    <div class="video-icube">
+                    <iframe width="95%" height="300px" src="https://www.youtube.com/embed/uIhifpephG0" title="iCUBE event Teaser" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- -----------------------8. Why  to   Video -------------------------------------- -->
+    <div class="cont4">
+        <h1>Problem Statements</h1>
+        <div class="grid">
+            <div class="card" onclick="showModal(1)">
+                <h2>PS 1</h2>
+                <p>Switching from heavy fuel oil to a suitable fuel...</p>
+            </div>
+            <div class="card" onclick="showModal(2)">
+                <h2>PS 2</h2>
+                <p>Drone-based surveillance system for vessels...</p>
+            </div>
+            <div class="card" onclick="showModal(3)">
+                <h2>PS 3</h2>
+                <p>Removal/Reduction of stickiness in spray drying...</p>
+            </div>
+            <div class="card" onclick="showModal(4)">
+                <h2>PS 30</h2>
+                <p>IoT-enabled Android application for parking space...</p>
+            </div>
+        </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    </div>
+   <br><br><br><br><br><br>
+   <br><br><br><br><br><br>
+   <br><br><br><br><br><br>
+   <br><br><br><br><br><br>
+   <br><br><br><br><br><br>
+   
+
+
+
+    <!-- -------------------------------------------------- 9. Problem Statement -------------------------------- -->
+
+
+    <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
+        <div class="col-lg-6">
+            <div class="common-title text-center">
+                <h2>Events <span>Schedule</span></h2>
+                <p class="margin-top-20">
+                    The schedule of the event has been designed to provide the participants with adequate
+                    amount of time to expand their skills.
+                </p>    
+            </div>
+        </div>
+    </div>
+   <!-- <script defer src="assets/js/timeline.js"></script>-->
+
+    <div class="timeline">
+        <div class="timecontainer left-container">
+          <img src="assets/img/shape/white.jpg">
+          <div class="text-box">
+            <h2>Registration starts📆</h2>
+            <h6>28/01/2024</h6>
+            <p><h3>Registration phase for the participants</h3>
+              <h4>  The registration process commences from 28th of January with an Inaugral Ceremony. The interested participants are directed to register themselves on the portal in the due time
+              </h4></p>
+              <span class="left-container-arrow"></span>
+          </div>
+        </div>
+        <div class="timecontainer right-container">
+          <img src="assets/img/shape/white.jpg" >
+          <div class="text-box">
+            <h2>🔒Registration closes</h2>
+            <h6>xx/xx/xxxx</h6>
+            <p><h3>The final day for accepting registrations.
+            </h3>
+            <h4>Once the registrations end, the Shortlisting phases begins. From this point on, no more registration from participant will be entertained.
+            </h4>
+          </p>
+          <span class="right-container-arrow"></span>
+          </div>
+        </div><div class="timecontainer left-container2">
+          <img src="assets/img/shape/white.jpg">
+          <div class="text-box">
+            <h2>Grand finale🏆</h2>
+            <h6>xx/xx/xxxx</h6>
+            <p><h3>The Grand Finale of both InnoWel and Idea-o-lite
+            </h3>
+            <h4> This is the time when the participants are required to build up their projects, comprehend the problem statement, come up with an interesting solution to the problem and ponder upon the implementation details of their idea, write down the codes, strive to get rid of all sorts of bugs in the implementation, and finally furnish their developed applications.
+              </h4>
+            </p>
+              <span class="left-container-arrow"></span>
+          </div>
+        </div>
+      </div>
+
+
+<!--    
+            <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
+                <div class="col-lg-6">
+                    <div class="common-title text-center">
+                        <h2>Events <span>Schedule</span></h2>
+                        <p class="margin-top-20">
+                            The schedule of the event has been designed to provide the participants with adequate
+                            amount of time to expand their skills.
+                        </p>    
+                    </div>
+                </div>
+            </div>
+
+            <div class="row sc_tab_nav margin-bottom-30">
+                <div class="col-lg-8 mx-auto wow fadeInUp" data-wow-delay=".2s">
+                    <div class="line">
+                        <img src="assets/img/shape/line.png" alt="">
+                        <span class="one"></span>
+                        <!--<span class="two"></span>-->
+                        <!--<span class="three"></span>-->
+                        <!--<span class="four"></span>-->
+                        <span class="five"></span>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="nav sc_nav_wrapper justify-content-center" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active wow zoomIn" data-wow-delay=".2s" id="nav-one-tab"
+                            data-bs-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one"
+                            aria-selected="true">
+                            <div class="single-nav">
+                                <h4>Registration Begins</h4>
+                                <p>28 Jan 2024</p>
+                            </div>
+                        </a>
+                        <a class="nav-item nav-link wow zoomIn" data-wow-delay=".4s" id="nav-two-tab"
+                            data-bs-toggle="tab" href="#nav-two" role="tab" aria-controls="nav-two"
+                            aria-selected="false">
+                            <div class="single-nav">
+                                <h4>Registration Closes</h4>
+                                <p>10 Feb 2024</p>
+                            </div>
+                        </a>
+                        
+                        <a class="nav-item nav-link active wow zoomIn" data-wow-delay=".2s" id="nav-one-tab"
+                            data-bs-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one"
+                            aria-selected="true">
+                            <div class="single-nav">
+                                <h4>Grand Finale</h4>
+                                <p>16,17 Feb 2024</p>
+                            </div>
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-one-tab">
+
+                    <div id="nav-one" class="row sc_tab_cont no-gutters align-items-center wow fadeInUp">
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <div class="sp_img">
+                                <img src="assets/img/sponsors/register.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12">
+                            <div class="sp_cont">
+                                <div class="meta-box">
+                                    <span><i class="icofont-ui-calendar"></i> 28 Jan 2024</span>
+                                    <span><i class="icofont-clock-time"></i></span>
+
+                                </div>
+                                <h5>Registration Begins</h5>
+                                <h4>Registration phase for the participants.</h4>
+                                <p class="margin-top-20">
+                                    The registration process commences from 28th of January with an Inaugral Ceremony. The interested participants are directed to register themselves on the
+                                    portal in the due time.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="nav-two" class="row sc_tab_cont no-gutters align-items-center wow fadeInUp">
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <div class="sp_img">
+                                <img src="assets/img/sponsors/coding.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12">
+                            <div class="sp_cont">
+                                <div class="meta-box">
+                                    <span><i class="icofont-ui-calendar"></i> 10 Feb 2024</span>
+                                    <span><i class="icofont-clock-time"></i></span>
+
+                                </div>
+                                <h5>Registration Closes</h5>
+                                <h4>The final day for accepting registrations.</h4>
+                                <p class="margin-top-20">
+                                    Once the registrations end, the Shortlisting phases begins. From this point on, no more registration from participant will be entertained.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="nav-three" class="row sc_tab_cont no-gutters align-items-center wow fadeInUp">
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <div class="sp_img">
+                                <img src="assets/img/sponsors/results.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12">
+                            <div class="sp_cont">
+                                <div class="meta-box">
+                                    <span><i class="icofont-ui-calendar"></i>16,17 Feb 2024</span>
+                                    <span><i class="icofont-clock-time"></i></span>
+
+                                </div>
+                                <h5>Grand Finale</h5>
+                                <h4>The Grand Finale of both InnoWel and  Idea-o-lite</h4>
+                                <p class="margin-top-20">
+                                    This is the time when the participants are required to build up
+                                    their projects, comprehend the problem statement, come up with an interesting
+                                    solution to the problem and ponder upon the implementation details of their idea,
+                                    write down the codes, strive to get rid of all sorts of bugs in the implementation,
+                                    and finally furnish their developed applications.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+</div> -->
+
+    <!-- ----------------------------10. Event Schedule------------------------------------------------- -->
+
+
+    <div id="prize" class="prize-area padding-top-110 padding-bottom-90">
+        <div class="tic_shapes">
+            <img src="assets/img/shape/e_vec2.png" alt="" class="vec_1">
+            <img src="assets/img/shape/e_vec5.png" alt="" class="vec_2">
+            <img src="assets/img/shape/vec_5.png" alt="" class="vec_3 item-zooming">
+        </div>
+        <div class="container position-relative">
+            <div class="row justify-content-center margin-bottom-20">
+                <div class="col-lg-6 wow fadeInUp">
+                    <div class="common-title text-center">
+                        <h5>Prizes</h5>
+                        <h2><span>Total</span> prize pool worth <span>100K INR</span></h2>
+                        <p class="margin-top-20">
+                            Earn exciting prizes for your hard work and creativity!
+                        </p>
+                    </div>
+                </div>
+            </div>
+  
+
+    <div id="team" class="container position-relative">
+               <div class="row align-items-center">
+                   <div class="col-lg-5 col-xl-6">
+                       <div class="testi-left">
+                           <div class="common-title">
+                               <h5>CREW</h5>
+                               <h2>know our <span>revered</span> team</h2>
+                               <p class="margin-top-20">
+                                   The esteemed personalities who are working behind to make it possible for our event to fetch grandier success.
+                               </p>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-7 col-xl-6">
+                       <div class="testi-right">
+                           <div class="testi-slider-active">
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/adityakrishnun/" ><div class="single-testi">
+                                       <div class="img-box">
+                                           <img style="width:170px;height:170px;" src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/ba733640-ed34-41f4-84c9-2bb0397d2e1e" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Aditya Krishan</h5>
+                                           <h6 class="margin-top-10">President</h6>
+                                           <p class="margin-top-10">
+                                            
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/thz_iz_vishnuoff/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img  style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/6590c277-88eb-4b0a-8c43-65121b779587" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Vishnuvasan T S</h5>
+                                           <h6 class="margin-top-10">Chief Executive Officer</h6>
+                                           <p class="margin-top-10">
+                                               
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/_.maseera_/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/cf0e7a1a-3209-4c18-b841-31d425350bfd" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Maseera Ahmedi M</h5>
+                                           <h6 class="margin-top-10">Vice President</h6>
+                                           <p class="margin-top-10">
+                                             
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/t.e.j.u.b.o.l.l.a/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/442ade2b-9fef-4438-b34b-5048c4ab46e1" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Tejasvi Bolla</h5>
+                                           <h6 class="margin-top-10">General Secretary</h6>
+                                           <p class="margin-top-10">
+                                             
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                             
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/nareshraj_1712/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/3812742d-fa26-4d63-9ba3-d491a6bc371d" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Naresh Raj</h5>
+                                           <h6 class="margin-top-10">Chief Marketing Officer</h6>
+                                           <p class="margin-top-10">
+                                              
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                               
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/_shobxn/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/cfc87cbb-fd83-48ed-a267-a60de039f8d1" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Shoban S</h5>
+                                           <h6 class="margin-top-10">Joint Secretary</h6>
+                                           <p class="margin-top-10">
+                                              
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                               
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/rasu_chan8825/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/icube3.0/assets/113793678/f243263f-b382-490c-9bd1-557aa5967df8" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Rashmika R S</h5>
+                                           <h6 class="margin-top-10">Treasurer</h6>
+                                           <p class="margin-top-10">
+                                              
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                               
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/sakthi.maheswari_/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/fc966e78-472f-4960-ad0e-83fd1d3e7784" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Sakthi Maheswari M</h5>
+                                           <h6 class="margin-top-10">Alumni Association Secretary</h6>
+                                           <p class="margin-top-10">
+                                              
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                               
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/rahul_040202/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/eea16caf-b424-45eb-8a83-1883677e9c48" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Rahul G</h5>
+                                           <h6 class="margin-top-10">Executive Member</h6>
+                                           <p class="margin-top-10">
+                                              
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                               
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/subasree_sankar/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/25815512-00b3-4ff0-9542-629eabc03ba3" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Subasree S S</h5>
+                                           <h6 class="margin-top-10">Associate Alumni Association Secretary</h6>
+                                           <p class="margin-top-10">
+                                             
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                               
+                               <div class="col-lg-6">
+                                   <a href="https://www.instagram.com/meer_thahir_the_real_one/"><div class="single-testi">
+                                       <div class="img-box">
+                                           <img   style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/6db6b478-8883-4acb-9218-3c666d8a03f5" alt="">
+                                           <span class="quote"><i class="far fa-quote-left"></i></span>
+                                       </div>
+                                       <div class="cont-box">
+                                           <h5>Justin Kiran Kumar</h5>
+                                           <h6 class="margin-top-10">Mentorship Secretary</h6>
+                                           <p class="margin-top-10">
+                                             
+                                           </p>
+                                       </div>
+                                   </div></a>
+                               </div>
+                            
+                           </div>
+                       </div>
+                   </div>
+               </div>
+    </div>
+    <br/>
+    <br/>
+    
+        <div class="d-flex flex-row justify-content-center margin-top-40">
+            <div class="w-75">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/gallery/1-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/1-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/1-3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/1-4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/1-5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/1-6.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/1-7.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/1-8.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/2-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/2-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/2-3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/gallery/2-4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>    
+        </div>   
+    
+
+   <!-- -----------------------------------------11.  Price and Crew ------------------------------------------------- -->
+
+
+
+    <div id="sponsor" class="brand-area padding-top-110 padding-bottom-90">
+        <div class="container">
+            <div class="row justify-content-center margin-bottom-20">
+                <div class="col-lg-6 wow fadeInUp">
+                    <div class="common-title text-center">
+                        <h5>sponsor</h5>
+                        <h2>meet our <span>sponsors</span></h2>
+                        <p class="margin-top-20">
+                            Our plethora of amazing sponsors stand out splendidly with their full and invaluable
+                            support.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!-- <h3>Platinum</h3> -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
+                    <div style="height:280px;" class="single-brand">
+                        <img style="width:auto;height:140px; margin: 0 auto;" src="https://github.com/Dexters-IN/icube3.0/assets/113793678/3f1f2aa6-b152-4c30-b8db-e87350e6dc42" alt="">
+                        <p style="text-align:'center';">Namo Travels</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
+                    <div style="height:280px;" class="single-brand">
+                        <img style="width:auto;height:140px;" src="https://github.com/Dexters-IN/icube3.0/assets/113793678/f535f0fe-a401-4715-a5ee-a6109b9718a8" alt="">
+                        <p style="text-align:'center';">AECC Global</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".6s">
+                    <div class="single-brand">
+                        <img src="assets/img/brand/3.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".8s">
+                    <div class="single-brand">
+                        <img src="assets/img/brand/4.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay="1s">
+                    <div class="single-brand">
+                        <img src="assets/img/brand/5.png" alt="">
+                    </div>
+                </div> 
+            </div>
+            
+        </div>
+    </div>
+
+
+<!-- ------------------------------------------ 12.Sponsers ----------------------------------------------------- -->
+
+    
+
+    <!-- <div class="testi-area padding-top-120 padding-bottom-120">
+        <div class="test-shapes">
+            <img src="assets/img/shape/e_vec2.png" alt="" class="vec1">
+            <img src="assets/img/shape/e_vec8.png" alt="" class="vec2 item-animateTwo">
+            <img src="assets/img/shape/vec_5.png" alt="" class="vec3 item-zooming">
+            <img src="assets/img/shape/tvec.png" alt="" class="vec4">
+        </div>
+
+    </div> -->
+
+
+   <div id="faq" class="faq-area padding-top-110 padding-bottom-110">
+        <div class="container">
+            <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
+                <div class="col-lg-7">
+                    <div class="common-title text-center">
+                        <h5>F A Q</h5>
+                        <h2>Frequently <span>Asked Questions</span></h2>
+                        <p class="margin-top-20">
+                            Here we address some of the most frequently asked queries of the participants regarding the
+                            event. Please go through this section to get an epitomized understanding of everything
+                            you need to know.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-lg-7 col-12 mx-auto wow fadeInLeft">
+                    <div class="faq-left">
+                        <div id="accordion" class="accordion-wrapper">
+                            <div class="card">
+                                <div class="card-header" id="headingTwentyseven">
+                                    <h5>
+                                            <a href="#" data-bs-toggle="collapse" class="collapse collapsed"
+                                            data-bs-target="#collapseTwentyseven" aria-expanded="false"
+                                            aria-controls="collapseTwentyseven">
+                                            01. What is the criteria for getting shortlisted?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwentyseven" class="collapse" aria-labelledby="headingTwentyseven"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Participants will be shortlisted for the preliminary round under each category based on the ABSTRACT submitted.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwentyeight">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseTwentyeight" aria-expanded="false"
+                                            aria-controls="collapseTwentyeight">
+                                            02. How final round will be?
+
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwentyeight" class="collapse" aria-labelledby="headingTwentyeight"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Based on the presentation, participants will be shortlisted for the final round where they need to present their complete work in front of the panel of Judges.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwentynine">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseTwentynine" aria-expanded="false"
+                                            aria-controls="collapseTwentynine">
+                                            03. What can be the team size?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwentynine" class="collapse" aria-labelledby="headingTwentynine"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Students can form a team of 2 to 4, with participants pursuing any engineering stream, studying in any year.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThirty">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseThirty" aria-expanded="false"
+                                            aria-controls="collapseThirty">
+                                            04. Can a participate be in more than 1 team?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThirty" class="collapse" aria-labelledby="headingThirty"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>A participant cannot be a part of more than 1 team and each team can work only on 1 problem statement.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingThirtyone">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseThirtyone" aria-expanded="false"
+                                            aria-controls="collapseThirtyone">
+                                            05. What type of solutions are allowed?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThirtyone" class="collapse" aria-labelledby="headingThirtyone"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>All types of solutions including Hardware, Software, Hypothesis Design and Prototype are allowed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThirtytwo">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseThirtytwo" aria-expanded="false"
+                                            aria-controls="collapseThirtytwo">
+                                            06. Will participation certificates be provided?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThirtytwo" class="collapse" aria-labelledby="headingThirtytwo"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Yes. Participation certificates will be provided to all the participants.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThirtythree">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseThirtythree" aria-expanded="false"
+                                            aria-controls="collapseThirtythree">
+                                            07. How much is the cash prize for top performers?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThirtythree" class="collapse" aria-labelledby="headingThirtythree"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Cash prizes worth 100K INR for top performers.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThirtyfour">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseThirtyfour" aria-expanded="false"
+                                            aria-controls="collapseThirtyfour">
+                                            08. Will the participants get any Internship offers?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThirtyfour" class="collapse" aria-labelledby="headingThirtyfour"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Yes, Internship offers are provided for TOP PERFORMERS.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingThirtyfive">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseThirtyfive" aria-expanded="false"
+                                            aria-controls="collapseThirtyfive">
+                                            09. Is this event beginner friendly?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThirtyfive" class="collapse" aria-labelledby="headingThirtyfive"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Yes, this event is beginner friendly.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingThirtysix">
+                                    <h5>
+                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
+                                            data-bs-target="#collapseThirtysix" aria-expanded="false"
+                                            aria-controls="collapseThirtysix">
+                                            10. Is there any registration fee?
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThirtysix" class="collapse" aria-labelledby="headingThirtysix"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>A nominal fee will be collected from each participant for food and refreshments.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<!-- ------------------------------------------------------13. FAQ ----------------------------------------------------------- -->
+        
+             
+    <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;" class="btn_wrapper animate1 margin-top-100">
+                    <a href="#" class="btn2 abstract-btn" target="_blank">Feedback</a>            
+    </div>
+            
+            
+    
+    
+<!---------------------------------14. FeedBack------------------------------------------------------>
+<footer>
+    <h4>Contact Us</h4>
+    <div class="date">16th February 2024 - 17th February 2024</div>
+    
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+        
+        <ul class="left">
+            <li>
+                <span><i class="fas fa-envelope"></i></span> 
+                <a href="mailto:icube@svce.ac.in">icube@svce.ac.in</a>
+            </li>
+            <li>
+                <span><i class="fas fa-map-marker-alt"></i></span> 
+                <a href="https://www.google.com/maps/place/Sri+Venkateswara+College+of+Engineering+(SVCE)/@12.9869803,79.9720389,15z/data=!4m7!3m6!1s0x3a528cd0cfb6e7ab:0x3294da3faad96a9!4b1!8m2!3d12.9869803!4d79.9720389!16zL20vMDMzcTdm?entry=ttu" 
+                    target="_blank">SVCE, Sriperumbudur (Outskirts of CHENNAI)</a>
+            </li>
+            <li>
+                <span><i class="fas fa-phone"></i></span>
+                <span>Aditya Krishnan (President): <a href="tel:9600082496">96000 82496</a></span>
+            </li>
+        </ul>
+
+       
+        
+        <ul class="right">
+            <li>
+                <span><i class="fas fa-phone"></i></span>
+                <span>T S Vishnuvasan (CEO): <a href="tel:9840063842">98400 63842</a></span>
+            </li>
+            <li>
+                <span><i class="fab fa-linkedin"></i></span> 
+                <a href="https://www.linkedin.com/in/science-club-188144214" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/LinkedIn_logo_2023.png" alt="LinkedIn"> LinkedIn - svce-science-club
+                </a>
+            </li>
+            <li>
+                <span><i class="fab fa-instagram"></i></span> 
+                <a href="https://www.instagram.com/svce.science_club/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram"> Instagram - svce.science_club
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="foo_btm">
+        <span> &copy; copyright 2024 <a href="https://dexters-in.netlify.app/" target="_blank"><b class="dexters-text">DEXTERS</b></a> All Rights Reserved.</span>
+    </div>
+</footer>
+</div>
+
+    <div class="scrollup"><i class="fas fa-level-up"></i></div>
+    <script src="assets/js/Toggle.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/counterup.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/easing.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/LoadDelay.js"></script>
+    <script src="assets/js/ArrowMove.js"></script>
+    <script src="assets/js/Transition.js"></script>
+    <script src="assets/js/ProbStatement.js"></script>
+
+</main>
+</body>
+
+</html>
