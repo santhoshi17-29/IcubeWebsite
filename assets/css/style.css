@@ -61,6 +61,11 @@
 
 /* Register Button--------- */
 .clock {
+  margin: auto; 
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   width:80%;
   display: grid;
   padding: 0 12px;
@@ -207,15 +212,59 @@
 }
 .label {
   text-align: center;
-  font-size: 25px;
+  font-size: 25px; /* Larger font for desktop */
   color: white; /* White text */
-  background: linear-gradient(90deg, #87CEEB, #00f); /* Sky blue gradient */
-  -webkit-background-clip: text; /* Safari/Chrome */
-  background-clip: text; /* Standard for other browsers */
-  margin-top: 20px;
-  text-transform: uppercase;
-  text-shadow: 0 0 5px rgba(135, 206, 235, 0.7), 0 0 10px rgba(135, 206, 235, 0.7); /* Outer glow effect */
+  background-color: black; /* Black background */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  border: 2px solid purple; /* Purple border */
+  box-shadow: 0 0 5px purple, 0 0 10px purple, 0 0 20px purple; /* Glowing effect */
+  animation: radiumGlow 1.5s infinite; /* Infinite glowing animation */
 }
+
+/* Keyframes for glowing effect */
+@keyframes radiumGlow {
+  0% {
+      box-shadow: 0 0 5px purple, 0 0 10px purple, 0 0 15px purple;
+  }
+  50% {
+      box-shadow: 0 0 10px purple, 0 0 20px purple, 0 0 30px purple;
+  }
+  100% {
+      box-shadow: 0 0 5px purple, 0 0 10px purple, 0 0 15px purple;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .clock {
+      width: 100%; /* Full width for smaller screens */
+      min-width: auto; /* Remove fixed width constraint */
+      height: auto; /* Allow height to adapt */
+      padding: 10px; /* Adjust padding for mobile */
+  }
+
+  .flipper {
+      min-width: 5px; /* Smaller flipper size */
+      height: 130px; /* Adjust height for smaller screens */
+  }
+
+  .text {
+      font-size: 60px; /* Reduce font size */
+      line-height: 100px; /* Adjust for better fit */
+  }
+
+  .label {
+    font-size: 18px; /* Smaller font size */
+    padding: 3px 8px; /* Reduced padding */
+    border-radius: 3px; /* Slightly smaller rounded corners */
+    border: 1.5px solid purple; /* Adjusted border thickness */
+    box-shadow: 0 0 3px purple, 0 0 8px purple, 0 0 15px purple; /* Subtle glow for mobile */
+    animation: radiumGlow 1.5s infinite; /* Same glowing animation */
+}
+}
+
 
 /* ------------------ */
 
