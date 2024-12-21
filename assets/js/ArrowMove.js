@@ -35,6 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
 
- 
+  function increaseFontSizeIfPDF() {
+    var rulebookLink = document.getElementById('rulebook');
+    var brochureLink = document.getElementById('brochure');
+
+    // Check if the href contains a .pdf and apply larger font size
+    if (rulebookLink.href.includes('.pdf')) {
+        rulebookLink.classList.add('large-font');
+    }
+    if (brochureLink.href.includes('.pdf')) {
+        brochureLink.classList.add('large-font');
+    }
+}
+
+// Call the function to adjust font sizes on page load
+window.onload = increaseFontSizeIfPDF;
   
   

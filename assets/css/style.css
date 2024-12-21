@@ -460,21 +460,31 @@ svg {
 }
 
 .btn1,.btn2 {
-  display: inline-block;
+  /* display: inline-block;
   padding: 10px 15px;
   text-decoration: none;
   color: #fff;
-  background: linear-gradient(to right, #6a11cb, #1f094a); /* Cool gradient button */
-  border-radius: 8px;
+  background: linear-gradient(to right, #6a11cb, #1f094a);   border-radius: 8px;
   text-align: center;
   font-weight: bold;
-  box-shadow: 0 4px 8px rgba(8, 8, 8, 0.2);
+  box-shadow: 0 4px 8px rgba(8, 8, 8, 0.2); */
+  background-color: #9a4dff; /* Purple background */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
 }
 
 .btn1:hover, .btn2:hover {
   background: linear-gradient(to right, #6706e5, #290352);
   transform: translateY(-6px);
-  transition: 1s ease;
+  transform: scale(1.1);
 }
 .event-text {
   color:white;
@@ -606,22 +616,27 @@ svg {
   text-align: center; /* Optional: add padding for spacing */
 }
 .link-section {
-  flex: 1; /* This will make the link sections take equal space */
-  padding-right: 20px; /* Space between the links and the image section */
+  /* flex: 1; 
+  padding-right: 20px;  */
+  text-align: center;
+  margin: 20px 0;
+}
+.large-font {
+  font-size: 24px !important; /* Larger font size for the button */
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between; /* Spread out the buttons */
+  align-items: center;
+  width: 100%;
+  padding: 0 20px; /* Optional: Adds some padding on left and right */
 }
 
-.btn1 {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #28a745;
-  text-decoration: none;
-  border-radius: 5px;
+.btn-container .link-section {
+  width: 48%; /* Ensures the buttons don't take up full width */
 }
 
-.btn1:hover {
-  background-color: #218838;
-}
+
 
 /* Image Section */
 .image-section {
@@ -2476,11 +2491,14 @@ text-align: center;
   }
 }
 .common-title h2 {
-  color: #221b68;
+  font-size: 36px;
+  color: #ffffff;
 }
+
 .common-title h2 span {
-  color: #fd424d;
+  color: #b89f5d; /* Golden color for emphasis */
 }
+
 .common-title h5 {
   color: #8c17fe;
 }
@@ -2775,23 +2793,47 @@ text-align: center;
   }
 }
 .counter-area {
-  margin-top: -130px;
-  background-color: #070707;
-
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #1a1a1a; /* Dark gray section background */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 30px auto;
+  max-width: 1200px;
 }
+
 @media (max-width: 991.98px) {
   .counter-area {
     margin-top: -130px;
   }
 }
-.counter-area .counter_wrapper {
-  background: -webkit-linear-gradient(293deg, #800020 0%, #333333 100%);
-  background: -o-linear-gradient(293deg, #800020 0%, #333333 100%);
-  background: linear-gradient(157deg,#800020 0%, #333333 100%);
-  -webkit-box-shadow: 0 15px 40px 0 rgba(51, 51, 105, 0.05);
-  box-shadow: 0 15px 40px 0 rgba(51, 51, 105, 0.05);
-  border-radius: 10px;
+
+.single-counter {
+  background-color: #292929; /* Darker gray for counter boxes */
   padding: 20px;
+  border-radius: 10px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.single-counter h2 {
+  font-size: 48px;
+  margin: 0;
+  color: #ffffff; /* White counter values */
+}
+
+.single-counter h6 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #b89f5d; /* Golden labels for days/hours/minutes/seconds */
+}
+
+.counter_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .counter-area .counter_wrapper div:last-child .single-counter::after {
   display: none;
