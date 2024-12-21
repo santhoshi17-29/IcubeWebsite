@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow:wght@600&family=Saira+Extra+Condensed:wght@500&display=swap" rel="stylesheet">
 
     <title>ICUBE 3.0</title>
 
@@ -263,111 +264,68 @@
 
 
    <!-- ------------------------------------- 4. Bronchure and Rule Book --------------------------------------------------- -->
+  
 
-<br><br><br>
-    
-    
-
-    <br>
-    <br>
-    
-
-    <!-- <div class="counter-area padding-bottom-120">
-        <div class="container">
-            <div class="row padding-top-50 justify-content-center margin-bottom-20 wow fadeInUp">
-                <div class="col-lg-6">
-                    <div class="common-title text-center">
-                    <h2 class="gradient-text shining-text reflection" >Registrations <span>Closes in</span></h2>
-                </div>
-            </div>
-        </div>
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="row counter_wrapper countdown">
-                        <div class="col-6 col-sm-3">
-                            <div class="single-counter">
-                                <p  ><h2 id="days" class="days">00</h2></p>
-                                <h6>days</h6>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="single-counter">
-                                <p ><h2 id="hours" class="hours">00</h2></p>
-                                <h6>hours</h6>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="single-counter">
-                                <p ><h2 id="minutes" class="minutes">00</h2></p>
-                                <h6>minutes</h6>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="single-counter">
-                                <p ><h2 id="seconds" class="seconds">00</h2></p>
-                                <h6>seconds</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <div class="counter-area padding-bottom-120">
-        <div class="container">
-            <div class="row padding-top-50 justify-content-center margin-bottom-20 wow fadeInUp">
-                <div class="col-lg-6">
-                    <div class="common-title text-center">
-                        <h2 class="gradient-text shining-text reflection">Registrations <span>Closes in</span></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="row counter_wrapper countdown">
-                            <div class="single-counter">
-                                <h2 id="days" class="days">00</h2>
-                                <h6>days</h6>
-                            </div>
-                            <div class="single-counter">
-                                <h2 id="hours" class="hours">00</h2>
-                                <h6>hours</h6>
-                            </div>
-                            <div class="single-counter">
-                                <h2 id="minutes" class="minutes">00</h2>
-                                <h6>minutes</h6>
-                            </div>
-                            <div class="single-counter">
-                                <h2 id="seconds" class="seconds">00</h2>
-                                <h6>seconds</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="row padding-top-50 justify-content-center margin-bottom-20 wow fadeInUp">
+        <div class="col-lg-6">
+            <div class="common-title text-center">
+                <h2 class="gradient-text shining-text reflection">Registrations <span>Closes in</span></h2>
             </div>
         </div>
     </div>
-
+    <div id="admin-section"></div>
+    <div class="clock" >
+        <div class="flipper" id="dayFlipper">
+            <div class="gear"></div>
+            <div class="gear"></div>
+            <div class="top">
+                <div class="text">00</div>
+            </div>
+            <div class="bottom">
+                <div class="text">00</div>
+            </div>
+            <div class="label">Days</div>
+        </div>
+        <div class="flipper" id="hourFlipper">
+            <div class="gear"></div>
+            <div class="gear"></div>
+            <div class="top">
+                <div class="text">00</div>
+            </div>
+            <div class="bottom">
+                <div class="text">00</div>
+            </div>
+            <div class="label">Hours</div>
+        </div>
+        <div class="flipper" id="minuteFlipper">
+            <div class="gear"></div>
+            <div class="gear"></div>
+            <div class="top">
+                <div class="text">00</div>
+            </div>
+            <div class="bottom">
+                <div class="text">00</div>
+            </div>
+            <div class="label">Minutes</div>
+        </div>
+        <div class="flipper" id="secondFlipper">
+            <div class="gear"></div>
+            <div class="gear"></div>
+            <div class="top">
+                <div class="text">00</div>
+            </div>
+            <div class="bottom">
+                <div class="text">00</div>
+            </div>
+            <div class="label">Seconds</div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    
 
     <!-- ---------------------------------- 5. Registration + Timer ---------------------------------- -->
 
-<!-- 
-    
-    <div id="tsparticles" class="ev_schedule padding-top-110 padding-bottom-120" >
-       
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
-                <div class="col-lg-6">
-                    <div class="common-title text-center">
-                        <div class="intro-container">
-                            <div class="intro purpletheme">EVENTS UNDER ICUBE 4.0</div>
-                          </div>
-                          <p style="text-align: center; color: rgb(154, 148, 181); font-size: 30px;">A National Level Intercollegiate Event</p>
-                        </div>
-                </div>
-            </div> -->
+
             <div id="tsparticles" class="ev_schedule">
                 <div class="container">
                     <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
@@ -380,61 +338,49 @@
                     </div>
                 </div>
             </div>
-
             <!-- ------------------------------6. Events Under--------------------- -->
-    
+
     <div class="event-promo ">
-        <div class="ev_shapes">
-            <img src="assets/img/shape/e_vec1.png" alt="" class="vec_1">
-            <img src="assets/img/shape/e_vec2.png" alt="" class="vec_2">
-            <img src="assets/img/shape/e_vec4.png" alt="" class="vec_4 item-animateOne">
-            <img src="assets/img/shape/e_vec5.png" alt="" class="vec_5 item-animateTwo">
-            <img src="assets/img/shape/e_vec6.png" alt="" class="vec_6 d-none d-sm-block">
-            <img src="assets/img/shape/e_vec8.png" alt="" class="vec_8">
-            <img src="assets/img/shape/vec_2.png" alt="" class="vec_9 item-animateTwo">
-        </div>
-      
-                                    <div class="cont3">
-                                        <!-- Content Box 1 -->
-                                        <div class="cont-box1 left">
-                                          <h4 >InnoWel - Innovate for Wellbeing</h4>
-                                          <h5 >Problem Statement will be provided</h5>
-                                          <p class="margin-top-20">
-                                            Not only do you get to learn while making your own project, but you can also check out other projects once
-                                            the hackathon is over to see what others did differently.
-                                          </p>
-                                          <div class="event-link">
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScrWbC93u0YUtMZaV48aTXHfaKmKKm_uGbDhJs5FrJ0sX9SMg/viewform?usp=sharing"
-                                               target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
-                                            <a href="./assets/files/InnoWel Abstract Template.docx" download="InnoWel Abstract Template"
-                                               target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
-                                          </div>
-                                        </div>
-                                    
-                                        <!-- Content Box 2 -->
-                                        <div class="cont-box1 right">
-                                            <h4>Idea-o-lite - Ideate to illuminate</h4>
-                                            <h5>Theme: Fostering Societal Growth</h5>
-                                            <p class="margin-top-20">You’ll get exposure to some of the best minds in the
-                                                country, not just among the participants, but also the judges. You can make
-                                                friends and forge professional relationships with people from all across the
-                                                country.
-                                            </p>
-                                            <div class="event-link">
-                                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPpR9XcKrxHLHZDaEw7aSUsjJOwqN9IaAyw0H3XnCvjoeWSQ/viewform?usp=sharing" target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
-                                                <a href="./assets/files//Idea-O-Lite Abstract Template.docx" download="Idea-O-Lite Abstract Template" target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
-                                            </div>
-                                        </div>
-                                      </div>
+        
+        <div class="cont3">
+            <!-- Content Box 1 -->
+            <div class="cont-box1 left custom-slide1">
+              <h4 >InnoWel - Innovate for Wellbeing</h4>
+              <h5 >Problem Statement will be provided</h5>
+              <p class="margin-top-20">
+                Not only do you get to learn while making your own project, but you can also check out other projects once
+                the hackathon is over to see what others did differently.
+              </p>
+              <div class="event-link ">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScrWbC93u0YUtMZaV48aTXHfaKmKKm_uGbDhJs5FrJ0sX9SMg/viewform?usp=sharing"
+                   target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
+                <a href="./assets/files/InnoWel Abstract Template.docx" download="InnoWel Abstract Template"
+                   target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
+              </div>
+            </div>
+        
+            <!-- Content Box 2 -->
+            <div class="cont-box1 right custom-slide1">
+                <h4>Idea-o-lite - Ideate to illuminate</h4>
+                <h5>Theme: Fostering Societal Growth</h5>
+                <p class="margin-top-20">You’ll get exposure to some of the best minds in the
+                    country, not just among the participants, but also the judges. You can make
+                    friends and forge professional relationships with people from all across the
+                    country.
+                </p>
+                <div class="event-link">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPpR9XcKrxHLHZDaEw7aSUsjJOwqN9IaAyw0H3XnCvjoeWSQ/viewform?usp=sharing" target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
+                    <a href="./assets/files//Idea-O-Lite Abstract Template.docx" download="Idea-O-Lite Abstract Template" target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
+                </div>
+            </div>
+          </div>
 
 
+                                    </div>
 
                         <!-- -------------------7. Innowel   IdeoLite--------------------------------- -->
-               
-            <br>
-            <br>
-            <br>
-                <div class="corner-container">
+             
+                <!-- <div class="corner-container">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
                     <div class="ep-left">
                         <div class="common-title">
@@ -456,15 +402,32 @@
                                 shortlisted for the final round where they need to
                                 present their complete work in front of the panel of Judges.
                             </p>
-                            <!--<a href="https://forms.gle/Gn56icGPW7uziiaM6" target="_blank" class="btn1 margin-top-10 register-btn">REGISTER</a>-->
                         </div>
                     </div>
                     </div>
                     <div class="video-icube">
                     <iframe width="95%" height="300px" src="https://www.youtube.com/embed/uIhifpephG0" title="iCUBE event Teaser" frameborder="0" allowfullscreen></iframe>
                     </div>
+                </div> -->
+
+
+                <div class="corner-container">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="ep-left">
+                        <div class="join-icube">
+                           <h5></h5>
+                            <h2>Join I-CUBE <span> Here's why</span>!</h2>
+                            <p class="margin-top-20">
+                               The event offers recognition, valuable feedback, and networking opportunities, helping participants refine their ideas and skills. Successful participants may receive awards, while everyone will improve their problem-solving, critical thinking, and presentation abilities. Some ideas may also have real-world application potential for further development.
+                            </p>
+                            <!--<a href="https://forms.gle/Gn56icGPW7uziiaM6" target="_blank" class="btn1 margin-top-10 register-btn">REGISTER</a>-->
+                        </div>
+                    </div>
+                    </div>
+                    <div class="video-icube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uIhifpephG0?si=0jkONF76RtMvur4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
         </div>
 
     <!-- -----------------------8. Why  to   Video -------------------------------------- -->
@@ -563,143 +526,8 @@
       </div>
 
 
-<!--    
-            <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
-                <div class="col-lg-6">
-                    <div class="common-title text-center">
-                        <h2>Events <span>Schedule</span></h2>
-                        <p class="margin-top-20">
-                            The schedule of the event has been designed to provide the participants with adequate
-                            amount of time to expand their skills.
-                        </p>    
-                    </div>
-                </div>
-            </div>
+                  
 
-            <div class="row sc_tab_nav margin-bottom-30">
-                <div class="col-lg-8 mx-auto wow fadeInUp" data-wow-delay=".2s">
-                    <div class="line">
-                        <img src="assets/img/shape/line.png" alt="">
-                        <span class="one"></span>
-                        <!--<span class="two"></span>-->
-                        <!--<span class="three"></span>-->
-                        <!--<span class="four"></span>-->
-                        <span class="five"></span>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="nav sc_nav_wrapper justify-content-center" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active wow zoomIn" data-wow-delay=".2s" id="nav-one-tab"
-                            data-bs-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one"
-                            aria-selected="true">
-                            <div class="single-nav">
-                                <h4>Registration Begins</h4>
-                                <p>28 Jan 2024</p>
-                            </div>
-                        </a>
-                        <a class="nav-item nav-link wow zoomIn" data-wow-delay=".4s" id="nav-two-tab"
-                            data-bs-toggle="tab" href="#nav-two" role="tab" aria-controls="nav-two"
-                            aria-selected="false">
-                            <div class="single-nav">
-                                <h4>Registration Closes</h4>
-                                <p>10 Feb 2024</p>
-                            </div>
-                        </a>
-                        
-                        <a class="nav-item nav-link active wow zoomIn" data-wow-delay=".2s" id="nav-one-tab"
-                            data-bs-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one"
-                            aria-selected="true">
-                            <div class="single-nav">
-                                <h4>Grand Finale</h4>
-                                <p>16,17 Feb 2024</p>
-                            </div>
-                        </a>
-                       
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-one-tab">
-
-                    <div id="nav-one" class="row sc_tab_cont no-gutters align-items-center wow fadeInUp">
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="sp_img">
-                                <img src="assets/img/sponsors/register.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="sp_cont">
-                                <div class="meta-box">
-                                    <span><i class="icofont-ui-calendar"></i> 28 Jan 2024</span>
-                                    <span><i class="icofont-clock-time"></i></span>
-
-                                </div>
-                                <h5>Registration Begins</h5>
-                                <h4>Registration phase for the participants.</h4>
-                                <p class="margin-top-20">
-                                    The registration process commences from 28th of January with an Inaugral Ceremony. The interested participants are directed to register themselves on the
-                                    portal in the due time.
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="nav-two" class="row sc_tab_cont no-gutters align-items-center wow fadeInUp">
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="sp_img">
-                                <img src="assets/img/sponsors/coding.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="sp_cont">
-                                <div class="meta-box">
-                                    <span><i class="icofont-ui-calendar"></i> 10 Feb 2024</span>
-                                    <span><i class="icofont-clock-time"></i></span>
-
-                                </div>
-                                <h5>Registration Closes</h5>
-                                <h4>The final day for accepting registrations.</h4>
-                                <p class="margin-top-20">
-                                    Once the registrations end, the Shortlisting phases begins. From this point on, no more registration from participant will be entertained.
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div id="nav-three" class="row sc_tab_cont no-gutters align-items-center wow fadeInUp">
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="sp_img">
-                                <img src="assets/img/sponsors/results.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="sp_cont">
-                                <div class="meta-box">
-                                    <span><i class="icofont-ui-calendar"></i>16,17 Feb 2024</span>
-                                    <span><i class="icofont-clock-time"></i></span>
-
-                                </div>
-                                <h5>Grand Finale</h5>
-                                <h4>The Grand Finale of both InnoWel and  Idea-o-lite</h4>
-                                <p class="margin-top-20">
-                                    This is the time when the participants are required to build up
-                                    their projects, comprehend the problem statement, come up with an interesting
-                                    solution to the problem and ponder upon the implementation details of their idea,
-                                    write down the codes, strive to get rid of all sorts of bugs in the implementation,
-                                    and finally furnish their developed applications.
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-</div> -->
 
     <!-- ----------------------------10. Event Schedule------------------------------------------------- -->
 
@@ -978,54 +806,42 @@
    <!-- -----------------------------------------11.  Price and Crew ------------------------------------------------- -->
 
 
-
-    <div id="sponsor" class="brand-area padding-top-110 padding-bottom-90">
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-6 wow fadeInUp">
-                    <div class="common-title text-center">
-                        <h5>sponsor</h5>
-                        <h2>meet our <span>sponsors</span></h2>
-                        <p class="margin-top-20">
-                            Our plethora of amazing sponsors stand out splendidly with their full and invaluable
-                            support.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <!-- <h3>Platinum</h3> -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div style="height:280px;" class="single-brand">
-                        <img style="width:auto;height:140px; margin: 0 auto;" src="https://github.com/Dexters-IN/icube3.0/assets/113793678/3f1f2aa6-b152-4c30-b8db-e87350e6dc42" alt="">
-                        <p style="text-align:'center';">Namo Travels</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div style="height:280px;" class="single-brand">
-                        <img style="width:auto;height:140px;" src="https://github.com/Dexters-IN/icube3.0/assets/113793678/f535f0fe-a401-4715-a5ee-a6109b9718a8" alt="">
-                        <p style="text-align:'center';">AECC Global</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".6s">
-                    <div class="single-brand">
-                        <img src="assets/img/brand/3.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".8s">
-                    <div class="single-brand">
-                        <img src="assets/img/brand/4.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay="1s">
-                    <div class="single-brand">
-                        <img src="assets/img/brand/5.png" alt="">
-                    </div>
-                </div> 
-            </div>
-            
+   <div id="sponsor" class="brand-area">
+    <div class="common-title1">
+        <!-- <h5 class="subtitle">SPONSORS</h5> -->
+        <h2 class="title">Meet Our <span class="highlight">Sponsors</span></h2>
+        <p class="description">
+            We extend our heartfelt gratitude to our amazing sponsors who have contributed immensely to our success.
+        </p>
+    </div>
+    <div class="sponsor-container">
+        <!-- Sponsor 1 -->
+        <div class="single-brand">
+            <img src="https://github.com/Dexters-IN/icube3.0/assets/113793678/3f1f2aa6-b152-4c30-b8db-e87350e6dc42" alt="Namo Travels">
+            <p class="sponsor-name">Namo Travels</p>
+        </div>
+        <!-- Sponsor 2 -->
+        <div class="single-brand">
+            <img src="https://github.com/Dexters-IN/icube3.0/assets/113793678/f535f0fe-a401-4715-a5ee-a6109b9718a8" alt="AECC Global">
+            <p class="sponsor-name">AECC Global</p>
+        </div>
+        <!-- Sponsor 3 -->
+        <div class="single-brand">
+            <img src="assets/img/brand/3.png" alt="Sponsor 3">
+            <p class="sponsor-name">Sponsor 3</p>
+        </div>
+        <!-- Sponsor 4 -->
+        <div class="single-brand">
+            <img src="assets/img/brand/4.png" alt="Sponsor 4">
+            <p class="sponsor-name">Sponsor 4</p>
+        </div>
+        <!-- Sponsor 5 -->
+        <div class="single-brand">
+            <img src="assets/img/brand/5.png" alt="Sponsor 5">
+            <p class="sponsor-name">Sponsor 5</p>
         </div>
     </div>
+</div>
 
 
 <!-- ------------------------------------------ 12.Sponsers ----------------------------------------------------- -->

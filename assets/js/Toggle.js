@@ -21,3 +21,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
   observer.observe(introElement);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const boxes = document.querySelectorAll('.cont-box1');
+
+  function checkVisibility() {
+    boxes.forEach(box => {
+      const boxTop = box.getBoundingClientRect().top;
+      const boxBottom = box.getBoundingClientRect().bottom;
+
+      // Check if box is in the viewport
+      if (boxTop < window.innerHeight && boxBottom > 0) {
+        box.classList.add('visible');
+      } else {
+        box.classList.remove('visible');
+      }
+    });
+  }
+
+  // Check visibility on scroll and resize
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('resize', checkVisibility);
+
+  // Initial check
+  checkVisibility();
+});
