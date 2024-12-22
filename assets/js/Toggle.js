@@ -1,7 +1,4 @@
-function toggleMenu() {
-  const menu = document.querySelector('.menu');
-  menu.classList.toggle('active'); // Toggle 'active' class to show/hide menu
-}
+
 
 
 

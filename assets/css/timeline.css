@@ -68,7 +68,8 @@
     position: absolute;
     width:6px;
     height:100%;
-    background: #f5f3f3;
+    background: #f5f5f3;
+    border: 3px solid goldenrod;
     top:0;
     margin-left: -3px;
     left:50%;
@@ -111,12 +112,9 @@
   .timecontainer h6{
     font-size: 25px;
   }
-  /*.timecontainer h2{
-    color:rgb(27, 24, 24);
-    border-color:rgb(27, 24, 24);
-  }*/
+ 
   .text-box:hover{
-    box-shadow: 0 0 20px 20px purple;
+    box-shadow: 0 0 30px 3px rgba(235, 216, 6, 0.5); /* Subtle hover effect */
     transform: scale(1.05);
   }
   .timecontainer h3{
@@ -148,3 +146,152 @@
     animation-timeline: view();
     animation-range: entry 0 cover 40%;
   }
+
+
+  /* Mobile-specific styles */
+@media (max-width: 768px) {
+
+  .timeline {
+    max-width: 100%; /* Full width for mobile */
+    margin: 50px 10px; /* Adjusted margin */
+  }
+
+  .timecontainer {
+    width: 100%; /* Full width for each container */
+    padding: 10px 20px; /* Adjust padding */
+    text-align: center; /* Center text for better readability */
+  }
+
+  .timecontainer img {
+    position: relative; /* Adjust image position */
+    right: 0; /* Center the image */
+    margin: 10px auto; /* Center align the image */
+    display: block; /* Block-level for images */
+  }
+
+  .text-box {
+    font-size: 14px; /* Slightly smaller font size for mobile */
+    padding: 15px 20px; /* Adjust padding */
+  }
+
+  .left-container,
+  .right-container,
+  .left-container2 {
+    left: 0; /* Reset alignment */
+    animation-delay: 0; /* Remove delays */
+  }
+
+  .left-container-arrow,
+  .right-container-arrow {
+    display: none; /* Hide arrows on mobile */
+  }
+
+  .timeline::after {
+    left: 0; /* Move the line to the left */
+    margin: 0 auto; /* Center the line */
+    height: 0; /* Initially hidden */
+    width: 100%; /* Full width for mobile */
+    animation: moveline 2s linear forwards; /* Keep the line animation */
+  }
+
+  .timecontainer h6 {
+    font-size: 20px; /* Adjust heading size */
+  }
+
+  .timecontainer h3 {
+    font-size: 18px; /* Adjust subheading size */
+  }
+
+  .timecontainer h4 {
+    font-size: 16px; /* Smaller font for additional details */
+  }
+}
+
+
+/* Mobile-specific styles */
+@media (max-width: 500px) {
+  .timeline {
+    max-width: 100%; /* Full width */
+    margin: 20px 5px; /* Compact margins */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .timecontainer {
+    width: 100%; /* Full width for each container */
+    margin-bottom: 20px; /* Add spacing between entries */
+    padding: 10px 15px; /* Compact padding */
+    text-align: center; /* Center text and content */
+  }
+
+  .timecontainer img {
+    position: relative; /* Adjust image positioning */
+    right: 0; /* Center the image */
+    margin: 10px auto; /* Center align the image */
+    display: block; /* Block-level for images */
+    width: 30px; /* Smaller size for mobile */
+    height: 30px; /* Maintain aspect ratio */
+  }
+
+  .text-box {
+    font-size: 12px; /* Smaller font size */
+    padding: 15px 10px; /* Compact padding */
+    text-align: left; /* Align text for better readability */
+    border-radius: 5px; /* Slightly smaller border-radius */
+  }
+
+  .text-box h2 {
+    font-size: 16px; /* Smaller heading size */
+  }
+
+  .text-box h3 {
+    font-size: 14px; /* Adjust subheading size */
+    margin-top: 10px;
+  }
+
+  .text-box h4 {
+    font-size: 12px; /* Smaller details */
+    margin-top: 5px;
+    line-height: 1.4; /* Improve readability */
+  }
+
+  .text-box h6 {
+    font-size: 14px; /* Slightly smaller */
+    color: #333; /* Subtle color for contrast */
+  }
+  .text-box:hover{
+    box-shadow: 0 0 10px 3px rgba(223, 241, 16, 0.5); /* Subtle hover effect */
+
+  }
+
+  .left-container {
+    left: 0%; 
+    width: 50%;/* Slightly away from the center */
+}
+.right-container {
+    left: 50%; /* Shifted towards the right */
+    transform: translateX(-100%);
+    width: 50%;
+}
+.left-container2 {
+    left: 0%; /* Aligned like the first container */
+    width:50%;
+}
+
+  .left-container-arrow,
+  .right-container-arrow {
+    display: none; /* Hide arrows for simplicity on small screens */
+  }
+
+  .timeline::after {
+    left: 50%; /* Keep the vertical line centered */
+    transform: translateX(-50%);
+    width: 3px; /* Slightly thinner line */
+    background: #e0e0e0; /* Subtle line color */
+    animation: moveline 2s linear forwards; /* Keep the animation */
+  }
+
+  .timeline:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+  }
+  
+}

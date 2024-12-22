@@ -31,10 +31,14 @@
 </head>
 
 <body >
-    <div class="main-container">
     <div id="tsparticles"> </div>
     <svg></svg>
   <script>
+
+    function toggleMenu() {
+  const menu = document.querySelector('.main-menu');
+  menu.classList.toggle('active');
+}
     const svg = document.querySelector('svg');
     let points = [];
 
@@ -145,29 +149,29 @@
           <div class="sticky-header">
             <div class="header-bottom position-relative">
               <div class="container">
-                <div class="row align-items-center justify-content-start justify-content-lg-between">
+                <div class="row align-items-center justify-content-between">
                   <!-- Logo Section -->
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                  <div class="col-4 col-md-3">
                     <div class="logo">
                       <a href="https://dexters-in.github.io/i-cube_2.0/">
-                        <img style="height: 100px; width:180px" src="assets/img/logo/ICUBE LOGO 1.png" alt="">
+                        <img src="assets/img/logo/ICUBE LOGO 1.png" alt="ICUBE Logo">
                       </a>
                     </div>
                   </div>
-                  <!-- Navigation Section -->
-
-                  
-                  <div class="col-lg-9 col-md-9 col-sm-9 col-6 d-flex justify-content-end" >
+                  <!-- Hamburger Menu -->
+                  <div class="col-2 d-md-none text-end">
                     <div class="hamburger-menu" onclick="toggleMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <!-- Navigation Section -->
+                  <div class="col-8 col-md-9">
                     <nav class="main-menu">
-                        
-                      <ul >
-                        <li><a href="#about"><p>Abstract <br>Template</p></a></li>
-                        <li><a href="#problem-statement"><p>Problem <br>Statements</p></a></li>
+                      <ul>
+                        <li><a href="#about"><p>Abstract<br>Template</p></a></li>
+                        <li><a href="#problem-statement"><p>Problem<br>Statements</p></a></li>
                         <li><a href="#schedule"><p>Schedule</p></a></li>
                         <li><a href="#prize"><p>Prize</p></a></li>
                         <li><a href="#faq"><p>FAQs</p></a></li>
@@ -179,12 +183,12 @@
             </div>
           </div>
         </div>
-      </header><br><br><br>
+      </header>
+      <br><br><br>
 
       <!-- ------------------------ 2. HEADER SECTION ---------------------- -->
 
 
-<body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -198,9 +202,9 @@
                 <h2 style="width: 100%; text-align: center;">Sri Venkateswara College of Engineering</h2>
                 <div class="cont">
                 <div class="slide-content">
-                    <h4>Sri Venkateswara College of Engineering (SVCE), a premier engineering college in Tamilnadu was established in the year 1985. 
+                    <div class="txt" style="text-align: left;">Sri Venkateswara College of Engineering (SVCE), a premier engineering college in Tamilnadu was established in the year 1985. 
                         The college is one of the pioneers in engineering education, excelling under the governance of Dr. A. C. Muthiah, an industrialist, 
-                        cricket administrator, philanthropist, and educationist who is the Chairman of the Governing Council of the college.</h4>
+                        cricket administrator, philanthropist, and educationist who is the Chairman of the Governing Council of the college.</div>
                 </div>
                 <div class="imagez">
                 <img src="assets/img/logo/logosvceR_edited-removebg-preview.png" alt="SVCE Logo">
@@ -214,10 +218,10 @@
                 <div class="cont">
 
                 <div class="slide-content">
-                    <h4>The Student Council is the apex student body for 4000+ students studying in SVCE. 
+                    <div class="txt" style="text-align: left;">The Student Council is the apex student body for 4000+ students studying in SVCE. 
                         The Student Council is in charge of the smooth conduct of college level events - Freshers Day, Ice breaker session for freshmen,
                          Teachers Day, Sports Day, College Culturals and Student Research Day. Under the leadership of Ms. Jasi Grace I and the mentoring of Prof. 
-                         Ganesh Vaidyanathan, the Student Council has brought forward several initiatives, each empowering hundreds of students.</h4>                    
+                         Ganesh Vaidyanathan, the Student Council has brought forward several initiatives, each empowering hundreds of students.</div>                    
                 </div>
                 <div class="imagez">
 
@@ -230,11 +234,11 @@
                     <div class="cont">
                     <div class="slide-content">
 
-                        <h4>The SVCE Science Club was started by the institution with a purpose to cultivate interest among the student community to 
+                        <div class="txt" style="text-align: left;">The SVCE Science Club was started by the institution with a purpose to cultivate interest among the student community to 
                             acquire scientific knowledge. Our club is an integration of three subjects, namely Physics, Chemistry, and Mathematics.
                              The door of the club is open to all the students who want to explore their interests in science. Students are provided 
                              with opportunities to engage with fellow students, professors, and eminent personalities of the field in meaningful and
-                              prudential ways.</h4>                    
+                              prudential ways.</div>                    
                               
                 </div>
                 <div class="imagez">
@@ -249,13 +253,13 @@
 
     <!-- -----------------------3.  3 slide Section -------------------------------- -->
 
-    <div class="cont2">
+    <div class="conti2">
         <div class="btn-container">
             <div class="link-section">
                 <a href="assets/files/iCUBE 3.0 RULEBOOK.pdf" download class="btn1 event-btn" id="rulebook">Download Rulebook</a>
             </div>
             <div class="link-section">
-                <a href="./assets/files/Santhoshi_Internship_Certificate.pdf" download="Santhoshi_Internship_Certificate" class="btn1 event-btn" id="brochure" target="_blank">Brochure</a>
+                <a href="./assets/files/Santhoshi_Internship_Certificate.pdf" download="Santhoshi_Internship_Certificate" class="btn1 event-btn" id="brochure" target="_blank">Download Brochure</a>
             </div>
         </div>
     </div>
@@ -267,9 +271,10 @@
 
     <div class="row padding-top-50 justify-content-center margin-bottom-20 wow fadeInUp">
         <div class="col-lg-6">
-            <div class="common-title text-center">
-                <h2 class="gradient-text shining-text reflection">Registrations <span>Closes in</span></h2>
+            <div class="registration">
+                <p class="regis-text">Registrations Closes in</p>
             </div>
+            
         </div>
     </div>
     <div id="admin-section"></div>
@@ -325,96 +330,72 @@
     <!-- ---------------------------------- 5. Registration + Timer ---------------------------------- -->
 
 
-            <div id="tsparticles" class="ev_schedule">
-                <div class="container">
-                    <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
-                        <div class="col-lg-6">
-                            <div class="common-title text-center">
-                                <h2>Events under<span> iCUBE 3.0</span></h2>
-                                <h3 class="event-text yellow-border">A National Level Intercollegiate Event</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="tsparticles" class="ev_schedule custom-slide-vert ">
+                <div class="wrapper1">
+                    <div class="bg"> EVENTS UNDER ICUBE 4.0 </div>
+                    <div class="fg"> EVENTS UNDER ICUBE 4.0 </div>
+                  </div>
+                
+                  <div class="wrapper1">
+                    <span class="bg"> A NATIONAL LEVEL INTERCOLLEGIATE EVENT </span>
+                    <span class="fg"> A NATIONAL LEVEL INTERCOLLEGIATE EVENT </span>
+                  </div>
             </div>
             <!-- ------------------------------6. Events Under--------------------- -->
 
-    <div class="event-promo ">
         
         <div class="cont3">
             <!-- Content Box 1 -->
             <div class="cont-box1 left custom-slide1">
-              <h4 >InnoWel - Innovate for Wellbeing</h4>
+              <p class="text1">InnoWel - Innovate for Wellbeing</p>
               <h5 >Problem Statement will be provided</h5>
-              <p class="margin-top-20">
+              <p style="color: white;"class="text2">
                 Not only do you get to learn while making your own project, but you can also check out other projects once
                 the hackathon is over to see what others did differently.
-              </p>
-              <div class="event-link ">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScrWbC93u0YUtMZaV48aTXHfaKmKKm_uGbDhJs5FrJ0sX9SMg/viewform?usp=sharing"
-                   target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
-                <a href="./assets/files/InnoWel Abstract Template.docx" download="InnoWel Abstract Template"
-                   target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
-              </div>
+              </p><br>
+              <div class="cont2">                <div class="btn-container">
+                <div class="link-section">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPpR9XcKrxHLHZDaEw7aSUsjJOwqN9IaAyw0H3XnCvjoeWSQ/viewform?usp=sharing" target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
+                </div>
+                <div class="link-section">
+                    <a href="./assets/files//Idea-O-Lite Abstract Template.docx" download="Idea-O-Lite Abstract Template" target="_blank" class="btn1 margin-top-10 event-btn">ABSTRACT TEMPLATE</a>
+                </div>
+            </div>
+            </div>
             </div>
         
             <!-- Content Box 2 -->
             <div class="cont-box1 right custom-slide1">
-                <h4>Idea-o-lite - Ideate to illuminate</h4>
+                <p class="text1">Idea-o-lite - Ideate to illuminate</p>
                 <h5>Theme: Fostering Societal Growth</h5>
-                <p class="margin-top-20">You’ll get exposure to some of the best minds in the
+                <p class="text2" style="color: white;">You’ll get exposure to some of the best minds in the
                     country, not just among the participants, but also the judges. You can make
                     friends and forge professional relationships with people from all across the
                     country.
                 </p>
-                <div class="event-link">
+                <div class="cont2">                <div class="btn-container">
+                <div class="link-section">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPpR9XcKrxHLHZDaEw7aSUsjJOwqN9IaAyw0H3XnCvjoeWSQ/viewform?usp=sharing" target="_blank" class="btn1 margin-top-10 event-btn">REGISTER</a>
-                    <a href="./assets/files//Idea-O-Lite Abstract Template.docx" download="Idea-O-Lite Abstract Template" target="_blank" class="btn2 margin-top-10 abstract-btn">ABSTRACT TEMPLATE</a>
+                </div>
+                <div class="link-section">
+                    <a href="./assets/files//Idea-O-Lite Abstract Template.docx" download="Idea-O-Lite Abstract Template" target="_blank" class="btn1 margin-top-10 event-btn">ABSTRACT TEMPLATE</a>
                 </div>
             </div>
+            </div>
+        </div>
+
           </div>
 
 
-                                    </div>
 
                         <!-- -------------------7. Innowel   IdeoLite--------------------------------- -->
              
-                <!-- <div class="corner-container">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="ep-left">
-                        <div class="common-title">
-                            <h5>Why Join I-CUBE 3.0</h5>
-                            <h2>Why You Should <span>Join Event</span> ?</h2>
-                            <p class="margin-top-20">
-                                The three words ideate, innovate, and investigate
-                                essentially represent the ethos of this event.
-                                Ideate refers to forming new ideas, innovate refers
-                                to the ideas being feasible and creative in nature,
-                                and Investigate refers to scrutinizing the ideas
-                                based on scientific facts, creativity, and novelty
-                                after their submission.
-                            </p>
-                            <p class="margin-top-20">
-                                Participants will be shortlisted for the preliminary
-                                round under each category based on the abstract submitted.
-                                Based on the presentation, participants will be
-                                shortlisted for the final round where they need to
-                                present their complete work in front of the panel of Judges.
-                            </p>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="video-icube">
-                    <iframe width="95%" height="300px" src="https://www.youtube.com/embed/uIhifpephG0" title="iCUBE event Teaser" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div> -->
 
 
                 <div class="corner-container">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
                     <div class="ep-left">
                         <div class="join-icube">
-                           <h5></h5>
                             <h2>Join I-CUBE <span> Here's why</span>!</h2>
                             <p class="margin-top-20">
                                The event offers recognition, valuable feedback, and networking opportunities, helping participants refine their ideas and skills. Successful participants may receive awards, while everyone will improve their problem-solving, critical thinking, and presentation abilities. Some ideas may also have real-world application potential for further development.
@@ -427,11 +408,12 @@
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/uIhifpephG0?si=0jkONF76RtMvur4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
-        </div>
 
-    <!-- -----------------------8. Why  to   Video -------------------------------------- -->
+    <!-- -----------------------8. join icube  to   Video -------------------------------------- -->
     <div class="cont4">
-        <h1>Problem Statements</h1>
+        <div class="cont5">
+        <div class="text3d">PROBLEM STATEMENTS</div>
+    </div>
         <div class="grid">
             <div class="card" onclick="showModal(1)">
                 <h2>PS 1</h2>
@@ -468,26 +450,27 @@
    
 
 
-
     <!-- -------------------------------------------------- 9. Problem Statement -------------------------------- -->
 
 
-    <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
-        <div class="col-lg-6">
-            <div class="common-title text-center">
-                <h2>Events <span>Schedule</span></h2>
-                <p class="margin-top-20">
-                    The schedule of the event has been designed to provide the participants with adequate
-                    amount of time to expand their skills.
-                </p>    
-            </div>
-        </div>
-    </div>
-   <!-- <script defer src="assets/js/timeline.js"></script>-->
+   <div class="custom-slide-vert">
+                <div class="wrapper1">
+                    <div class="bg"> EVENTS SCHEDULE </div>
+                    <div class="fg"> EVENTS SCHEDULE </div>
+                  </div> 
+                  <div class="wrapper1">
+                    <span class="bg"> The schedule of the event has been designed to provide the participants with adequate
+                        amount of time to expand their skills.
+                    </span>
+                    <span class="fg"> The schedule of the event has been designed to provide the participants with adequate
+                        amount of time to expand their skills.
+                    </span>
+                  </div>                
+                </div>     
 
     <div class="timeline">
         <div class="timecontainer left-container">
-          <img src="assets/img/shape/white.jpg">
+          <img src="assets/img/shape/gold.png">
           <div class="text-box">
             <h2>Registration starts📆</h2>
             <h6>28/01/2024</h6>
@@ -498,7 +481,7 @@
           </div>
         </div>
         <div class="timecontainer right-container">
-          <img src="assets/img/shape/white.jpg" >
+          <img src="assets/img/shape/gold.png" >
           <div class="text-box">
             <h2>🔒Registration closes</h2>
             <h6>xx/xx/xxxx</h6>
@@ -510,7 +493,7 @@
           <span class="right-container-arrow"></span>
           </div>
         </div><div class="timecontainer left-container2">
-          <img src="assets/img/shape/white.jpg">
+          <img src="assets/img/shape/gold.png">
           <div class="text-box">
             <h2>Grand finale🏆</h2>
             <h6>xx/xx/xxxx</h6>
@@ -525,72 +508,50 @@
       </div>
 
 
-                  
-
-
+      
     <!-- ----------------------------10. Event Schedule------------------------------------------------- -->
-
 
     <div id="prize" class="prize-area padding-top-110 padding-bottom-90">
        
         <div class="container position-relative">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-6 wow fadeInUp">
-                    <div class="common-title text-center">
-                        <h5>Prizes</h5>
-                        <h2><span>Total</span> prize pool worth <span>100K INR</span></h2>
-                        <p class="margin-top-20">
-                            Earn exciting prizes for your hard work and creativity!
-                        </p>
-                    </div>
-                </div>
-            </div>
-  
+            <div class="priz1">PRIZES</div>
+            <div class="priz2">Total prize pool worth <span>100K INR</span></div>
+            <div class="priz3" style="text-align: center;"> Earn exciting prizes for your hard work and creativity! </div>
 
     <div id="team" class="container position-relative">
                <div class="row align-items-center">
                    <div class="col-lg-5 col-xl-6">
                        <div class="testi-left">
-                           <div class="common-title">
-                               <h5>CREW</h5>
-                               <h2>know our <span>revered</span> team</h2>
-                               <p class="margin-top-20">
-                                   The esteemed personalities who are working behind to make it possible for our event to fetch grandier success.
-                               </p>
-                           </div>
-                       </div>
+                        <div class="priz1">CREW</div>
+                        <div class="priz2">Know our <span>revered</span> team</div>
+                        <div class="priz3">The esteemed personalities who are working behind to make it possible for our event to fetch grandier success.
+                        </div>
+                                   </div>
                    </div>
                    <div class="col-lg-7 col-xl-6">
                        <div class="testi-right">
                            <div class="testi-slider-active">
                                <div class="col-lg-6">
                                    <a href="https://www.instagram.com/adityakrishnun/" ><div class="single-testi">
-                                       <div class="img-box">
-                                           <img style="width:170px;height:170px;" src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/ba733640-ed34-41f4-84c9-2bb0397d2e1e" alt="">
-                                           <span class="quote"><i class="far fa-quote-left"></i></span>
-                                       </div>
-                                       <div class="cont-box">
-                                           <h5>Aditya Krishan</h5>
-                                           <h6 class="margin-top-10">President</h6>
-                                           <p class="margin-top-10">
-                                            
-                                           </p>
-                                       </div>
+                                      
+                                       <img src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/ba733640-ed34-41f4-84c9-2bb0397d2e1e" alt="Circular Image 1" class="circular-image">
+
+                                           <div class="boxz">
+                                            <div class="crew-text">
+                                                ADITYA KRISHNAN<br>President
+                                            </div>
+                                           </div>
                                    </div></a>
                                </div>
 
                                <div class="col-lg-6">
                                    <a href="https://www.instagram.com/thz_iz_vishnuoff/"><div class="single-testi">
-                                       <div class="img-box">
-                                           <img  style="width:170px;height:170px;"  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/6590c277-88eb-4b0a-8c43-65121b779587" alt="">
-                                           <span class="quote"><i class="far fa-quote-left"></i></span>
-                                       </div>
-                                       <div class="cont-box">
-                                           <h5>Vishnuvasan T S</h5>
-                                           <h6 class="margin-top-10">Chief Executive Officer</h6>
-                                           <p class="margin-top-10">
-                                               
-                                           </p>
+                                           <img  src="https://github.com/Dexters-IN/i-cube_2.0/assets/113793678/6590c277-88eb-4b0a-8c43-65121b779587" alt="IMAGE 2" class="circular-image">
+                                           
+                                       <div class="boxz">
+                                        <div class="crew-text">
+                                            VISHNUVASHAN <br>Cheif Executive<br> Officer
+                                        </div>
                                        </div>
                                    </div></a>
                                </div>
@@ -799,7 +760,7 @@
                     </button>
                 </div>
             </div>    
-        </div>   
+        </div>   <br><br>
     
 
    <!-- -----------------------------------------11.  Price and Crew ------------------------------------------------- -->
@@ -807,11 +768,12 @@
 
    <div id="sponsor" class="brand-area">
     <div class="common-title1">
-        <!-- <h5 class="subtitle">SPONSORS</h5> -->
-        <h2 class="title">Meet Our <span class="highlight">Sponsors</span></h2>
-        <p class="description">
+        <div class="cloud-container">
+        <h2 class="priz2">Meet Our <span class="highlight">Sponsors</span></h2>
+        <p class="spons">
             We extend our heartfelt gratitude to our amazing sponsors who have contributed immensely to our success.
         </p>
+    </div>
     </div>
     <div class="sponsor-container">
         <!-- Sponsor 1 -->
@@ -846,222 +808,183 @@
 <!-- ------------------------------------------ 12.Sponsers ----------------------------------------------------- -->
 
     
-
-    <!-- <div class="testi-area padding-top-120 padding-bottom-120">
-        <div class="test-shapes">
-            <img src="assets/img/shape/e_vec2.png" alt="" class="vec1">
-            <img src="assets/img/shape/e_vec8.png" alt="" class="vec2 item-animateTwo">
-            <img src="assets/img/shape/vec_5.png" alt="" class="vec3 item-zooming">
-            <img src="assets/img/shape/tvec.png" alt="" class="vec4">
-        </div>
-
-    </div> -->
-
-
-   <div id="faq" class="faq-area padding-top-110 padding-bottom-110">
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20 wow fadeInUp">
-                <div class="col-lg-7">
-                    <div class="common-title text-center">
-                        <h5>F A Q</h5>
-                        <h2>Frequently <span>Asked Questions</span></h2>
-                        <p class="margin-top-20">
-                            Here we address some of the most frequently asked queries of the participants regarding the
-                            event. Please go through this section to get an epitomized understanding of everything
-                            you need to know.
-                        </p>
-                    </div>
+<div id="faq" class="faq-area">
+    <div class="container">
+        <div class="row justify-content-center margin-bottom-20">
+            <div class="col-lg-7">
+                <div class="common-title text-center">
+                    <h2>Frequently <span>Asked Questions</span></h2>
+                    <p class="margin-top-20">
+                        Here we address some of the most frequently asked queries of the participants regarding the
+                        event. Please go through this section to get an epitomized understanding of everything
+                        you need to know.
+                    </p>
                 </div>
             </div>
-            
-            
-            <div class="row">
-                <div class="col-lg-7 col-12 mx-auto wow fadeInLeft">
-                    <div class="faq-left">
-                        <div id="accordion" class="accordion-wrapper">
-                            <div class="card">
-                                <div class="card-header" id="headingTwentyseven">
-                                    <h5>
-                                            <a href="#" data-bs-toggle="collapse" class="collapse collapsed"
-                                            data-bs-target="#collapseTwentyseven" aria-expanded="false"
-                                            aria-controls="collapseTwentyseven">
-                                            01. What is the criteria for getting shortlisted?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwentyseven" class="collapse" aria-labelledby="headingTwentyseven"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Participants will be shortlisted for the preliminary round under each category based on the ABSTRACT submitted.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwentyeight">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseTwentyeight" aria-expanded="false"
-                                            aria-controls="collapseTwentyeight">
-                                            02. How final round will be?
+        </div>
 
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwentyeight" class="collapse" aria-labelledby="headingTwentyeight"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Based on the presentation, participants will be shortlisted for the final round where they need to present their complete work in front of the panel of Judges.</p>
-                                    </div>
+        <!-- FAQ Accordion -->
+        <div class="row">
+            <div class="col-lg-7 col-12 mx-auto">
+                <div class="faq-left">
+                    <div id="accordion" class="accordion">
+                        <!-- FAQ Items -->
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading1">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                                       aria-expanded="false" aria-controls="collapse1">
+                                        01. What is the criteria for getting shortlisted?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    Participants will be shortlisted for the preliminary round under each category based on the ABSTRACT submitted.
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwentynine">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseTwentynine" aria-expanded="false"
-                                            aria-controls="collapseTwentynine">
-                                            03. What can be the team size?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwentynine" class="collapse" aria-labelledby="headingTwentynine"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Students can form a team of 2 to 4, with participants pursuing any engineering stream, studying in any year.</p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading2">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse2"
+                                       aria-expanded="false" aria-controls="collapse2">
+                                        02. How final round will be?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    Based on the presentation, participants will be shortlisted for the final round where they need to present their complete work in front of the panel of Judges.
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThirty">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseThirty" aria-expanded="false"
-                                            aria-controls="collapseThirty">
-                                            04. Can a participate be in more than 1 team?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThirty" class="collapse" aria-labelledby="headingThirty"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>A participant cannot be a part of more than 1 team and each team can work only on 1 problem statement.</p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading3">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse3"
+                                       aria-expanded="false" aria-controls="collapse3">
+                                       03. What can be the team size?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    Students can form a team of 2 to 4, with participants pursuing any engineering stream, studying in any year.
                                 </div>
                             </div>
-
-                            <div class="card">
-                                <div class="card-header" id="headingThirtyone">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseThirtyone" aria-expanded="false"
-                                            aria-controls="collapseThirtyone">
-                                            05. What type of solutions are allowed?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThirtyone" class="collapse" aria-labelledby="headingThirtyone"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>All types of solutions including Hardware, Software, Hypothesis Design and Prototype are allowed.</p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading4">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse4"
+                                       aria-expanded="false" aria-controls="collapse4">
+                                       04. Can a participate be in more than 1 team?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    A participant cannot be a part of more than 1 team and each team can work only on 1 problem statement.
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThirtytwo">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseThirtytwo" aria-expanded="false"
-                                            aria-controls="collapseThirtytwo">
-                                            06. Will participation certificates be provided?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThirtytwo" class="collapse" aria-labelledby="headingThirtytwo"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Yes. Participation certificates will be provided to all the participants.
-                                        </p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading5">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse5"
+                                       aria-expanded="false" aria-controls="collapse5">
+                                       05. What type of solutions are allowed?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    All types of solutions including Hardware, Software, Hypothesis Design and Prototype are allowed.
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThirtythree">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseThirtythree" aria-expanded="false"
-                                            aria-controls="collapseThirtythree">
-                                            07. How much is the cash prize for top performers?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThirtythree" class="collapse" aria-labelledby="headingThirtythree"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Cash prizes worth 100K INR for top performers.
-                                        </p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading6">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse6"
+                                       aria-expanded="false" aria-controls="collapse6">
+                                       06. Will participation certificates be provided?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    Yes. Participation certificates will be provided to all the participants.
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThirtyfour">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseThirtyfour" aria-expanded="false"
-                                            aria-controls="collapseThirtyfour">
-                                            08. Will the participants get any Internship offers?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThirtyfour" class="collapse" aria-labelledby="headingThirtyfour"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Yes, Internship offers are provided for TOP PERFORMERS.</p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading7">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse7"
+                                       aria-expanded="false" aria-controls="collapse7">
+                                       07. How much is the cash prize for top performers?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    Cash prizes worth 100K INR for top performers.
                                 </div>
                             </div>
-
-                            <div class="card">
-                                <div class="card-header" id="headingThirtyfive">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseThirtyfive" aria-expanded="false"
-                                            aria-controls="collapseThirtyfive">
-                                            09. Is this event beginner friendly?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThirtyfive" class="collapse" aria-labelledby="headingThirtyfive"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Yes, this event is beginner friendly.</p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading8">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse8"
+                                       aria-expanded="false" aria-controls="collapse8">
+                                       08. Will the participants get any Internship offers?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    Yes, Internship offers are provided for TOP PERFORMERS.
                                 </div>
                             </div>
-
-                            <div class="card">
-                                <div class="card-header" id="headingThirtysix">
-                                    <h5>
-                                        <a href="#" data-bs-toggle="collapse" class="collapsed"
-                                            data-bs-target="#collapseThirtysix" aria-expanded="false"
-                                            aria-controls="collapseThirtysix">
-                                            10. Is there any registration fee?
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThirtysix" class="collapse" aria-labelledby="headingThirtysix"
-                                    data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>A nominal fee will be collected from each participant for food and refreshments.</p>
-                                    </div>
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading9">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse9"
+                                       aria-expanded="false" aria-controls="collapse9">
+                                       09. Is this event beginner friendly?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    Yes, this event is beginner friendly.
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="cardz">
+                            <div class="cardz-header" id="heading10">
+                                <h5>
+                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#collapse10"
+                                       aria-expanded="false" aria-controls="collapse10">
+                                       10. Is there any registration fee?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordion">
+                                <div class="cardz-body">
+                                    A nominal fee will be collected from each participant for food and refreshments.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 <!-- ------------------------------------------------------13. FAQ ----------------------------------------------------------- -->
         
