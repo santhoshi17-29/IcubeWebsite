@@ -1,6 +1,18 @@
 @import "https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Roboto:wght@400;500;700&amp;family=Ubuntu:wght@500;700&amp;display=swap";
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
 
+.black-container {
+  margin-top: 30px;
+  margin-left: 0px;
+  margin-right: 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:black; 
+  border: 10px solid #0c0c0c;
+  border-radius: 100px;
+}
 .conti2 {
   display: flex;
   justify-content: center; /* Center the entire container */
@@ -202,8 +214,6 @@ h2 {
   font-size: 48px; /* Size of the text */
   font-weight: 900; 
   color: goldenrod; /* Golden color for text */
-  -webkit-text-stroke: 3px #526303; /* Increased border thickness to 3px */
-  /* Larger glow for golden effect */
 }
 @media (max-width: 768px) {
   h2 {
@@ -328,27 +338,52 @@ h2 {
 /* Grid layout for cards */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 20px;
+  grid-auto-rows: auto; /* Automatically adjust row height to fit content */
+  gap: 20px; /* Space between grid items */
+  max-width: 1200px; /* Maximum width of the grid */
+  margin: 0 auto; /* Center the grid on the page */
 }
 
 /* Card styles */
 .card {
-  background-color: #4b3f72; /* Purple background */
+  background-color: #131313;
   color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  text-align: left;
+  border:2px solid white;
 }
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.left1 {
+  width: 10%; /* Takes 25% of the card width */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.separator {
+  width: 5px; /* Width of the white line */
+  height: 150%; /* Full height of the card */
+  background-color: white; /* White line */
+}
+
+.right1 {
+  width: 75%; /* Takes 75% of the card width */
+  padding-left: 20px; /* Space between the line and the text */
+  font-size: 1rem;
+}
+
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(186, 159, 93, 0.3); /* Gold shadow */
+  box-shadow: 0 8px 20px rgba(247, 246, 245, 0.3); /* Gold shadow */
 }
 
 .card h2 {
@@ -383,33 +418,35 @@ h2 {
   border-radius: 10px;
   max-width: 500px;
   width: 80%;
-  text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: left; /* Aligns content to the left */
+}
+
+.close-btn {
+  background-color: transparent; /* Transparent background for close button */
+  color: #4b3f72; /* Purple color for the close button */
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px; /* Positions the button at the top-right corner */
+  right: 10px;
+}
+
+.close-btn:hover {
+  color: #3e2c58; /* Darker purple when hovered */
 }
 
 .modal h2 {
-  font-size: 24px;
-  color: #4b3f72; /* Purple for modal title */
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000; /* Black for PS1 */
 }
 
 .modal p {
   font-size: 16px;
-  color: #666;
-}
-
-.close-btn {
-  background-color: #4b3f72; /* Purple background for close button */
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.close-btn:hover {
-  background-color: #3e2c58; /* Darker purple when hovered */
+  color: #000; /* Black for the description */
 }
 
 /* Mobile responsive styles */
@@ -627,7 +664,6 @@ span.fg{
   transition: transform 0.8s ease, opacity 0.8s ease, box-shadow 0.3s ease;
   margin-bottom: 35px;
   color: #fff;
-  box-shadow: 0 0 20px 10px rgb(211, 201, 2);
 
 }
 
@@ -913,25 +949,27 @@ span.fg{
 
 
 .cont5 {
+display:flex;
+  text-align: center;
   position: relative;
   display: inline-block;
-  padding: 20px 40px; /* Add padding for spacing inside the box */
-  background-color: #1a1a1a; /* Dark background for contrast */
-  border-radius: 15px; /* Curved edges */
-  box-shadow: 0 0 20px 5px #800080; /* Vibrant purple glowing edges */
-  overflow: hidden; /* Ensure content stays within the box */
-  text-align: center; /* Center-align text */
+  padding: 20px 40px;
+  background-color: #000000;
+  border-radius: 15px;
+  color: white;
+  overflow: hidden;
 }
 
 .text3d {
+  /* text-align: center; */
   position: relative;
-  font-size: 80px; /* Default size for larger screens */
-  font-weight: 900;
+  font-size: 60px; /* Default size for larger screens */
+  font-weight: 700;
   color: #FFD700; /* Gold text */
-  background: linear-gradient(45deg, #800080, #FFD700); /* Purple to Gold gradient */
+  background: linear-gradient(45deg, #800080, #5a5329); /* Purple to Gold gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* Gradient applied to text */
-  -webkit-text-stroke: 1px white; /* White text border */
+  -webkit-text-stroke: 0.5px white; /* White text border */
   text-transform: uppercase;
 }
 
@@ -983,7 +1021,7 @@ span.fg{
   font-family: 'Times', 'Times New Roman', 'times-roman', 'Georgia', serif;
   font-size: 48px; /* Increased font size */
   font-weight: bold; /* Increase text thickness */
-  color: #cc00ff; /* Golden color */
+  color: #fbf8fc; /* Golden color */
   
   
   text-align: center;
@@ -991,17 +1029,10 @@ span.fg{
   padding: 20px;
   border: 3px solid #040404; /* Purple border */
   border-radius: 10px;
-  background: rgb(46, 43, 43); /* Dark background for contrast */
+  background: rgb(27, 26, 26); /* Dark background for contrast */
   
 
-  /* Golden glow effect */
-  text-shadow: 
-    0 0 5px #eae9df,   /* Soft glow */
-    0 0 10px #eae9df,  /* Medium glow */
-    0 0 20px #eae9df,  /* Larger glow */
-    0 0 30px #eae9df,  /* Amber outer glow */
-    0 0 40px #eae9df,  /* Reinforce golden glow */
-    0 0 50px #eae9df; 
+
 }
 
 @keyframes shine {
@@ -1016,9 +1047,7 @@ span.fg{
   }
 }
 
-.regis-text {
-  animation: shine 1.5s infinite; /* Repeated shining effect */
-}
+
 
 /* Mobile view adjustments */
 @media (max-width: 768px) {
@@ -1139,13 +1168,13 @@ h5
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-  width:80%;
+  width:65%;
   display: grid;
   padding: 0 12px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 12px;
   min-width: 800px; 
-  height: 220px; 
+  height: 180px; 
   border-radius: 30px;
   background-image: linear-gradient(rgb(14, 14, 15) 0%, rgb(26, 25, 28) 20%, rgb(44, 44, 52) 50%, rgb(20, 20, 27) 100%);
   box-shadow: 0 0 6px rgb(202 228 225 / 92%), 0 0 30px rgb(202 228 225 / 34%), 0 0 12px rgb(30 132 242 / 52%), 0 0 21px rgb(30 132 242 / 55%), 0 0 34px rgb(30 132 242 / 0%), 0 0 54px rgb(30 132 242 / 7%);
@@ -1215,6 +1244,7 @@ h5
   height: 100%;
   line-height: 193px;
   text-align: center;
+  opacity: 0.8;
   text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
 }
 
@@ -1290,9 +1320,8 @@ h5
   background-color: black; /* Black background */
   padding: 5px 10px; /* Padding around the text */
   border-radius: 5px; /* Rounded corners */
-  border: 2px solid purple; /* Purple border */
-  box-shadow: 0 0 5px purple, 0 0 10px purple, 0 0 20px purple; /* Glowing effect */
-  animation: radiumGlow 1.5s infinite; /* Infinite glowing animation */
+  border: 2px solid rgb(251, 249, 251); /* Purple border */
+  /* animation: radiumGlow 1.5s infinite;  */
 }
 
 /* Keyframes for glowing effect */

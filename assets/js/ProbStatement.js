@@ -13,9 +13,116 @@ const problemStatements = {
     description: "Removal/Reduction of stickiness in spray drying...",
   },
   4: {
-    title: "PS 30",
+    title: "PS 4",
     description: "IoT-enabled Android application for parking space...",
   },
+  5: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  6: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  7: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  8: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  9: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  10: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  11: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  12: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  13: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  14: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  15: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  16: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  17: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  18: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+
+  19: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  20: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  21: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  22: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  23: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  24: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  25: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  26: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  27: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  28: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  29: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  30: {
+    title: "PS 4",
+    description: "IoT-enabled Android application for parking space...",
+  },
+  
+
 };
 
 // Show modal for a specific problem statement
